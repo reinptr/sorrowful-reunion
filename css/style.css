@@ -5,69 +5,152 @@
 }
 
 body {
-  font-family: Georgia, serif;
-  height: 100vh;
-  background: linear-gradient(to bottom, #1f1c2c, #928dab);
-  color: white;
+  font-family: "Georgia", serif;
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at top, rgba(109, 93, 143, 0.35), transparent 35%),
+    linear-gradient(135deg, #0f172a, #1e1b2e, #111827);
+  color: #f8fafc;
+  overflow: hidden;
 }
 
-.overlay {
-  width: 100%;
-  height: 100%;
+.hero {
+  position: relative;
+  min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: 24px;
 }
 
-.container {
-  width: 90%;
-  max-width: 700px;
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(10, 10, 20, 0.28);
+  backdrop-filter: blur(2px);
+}
+
+.content-card {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 760px;
+  padding: 48px 36px;
   text-align: center;
-  padding: 40px;
-  background: rgba(255, 255, 255, 0.08);
-  border-radius: 20px;
-  backdrop-filter: blur(8px);
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+  border-radius: 24px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.45);
+  backdrop-filter: blur(14px);
+  animation: fadeUp 1.2s ease;
+}
+
+.mini-text {
+  font-size: 0.85rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #cbd5e1;
+  opacity: 0.8;
+  margin-bottom: 14px;
 }
 
 h1 {
-  font-size: 3rem;
-  margin-bottom: 10px;
+  font-size: 3.4rem;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  margin-bottom: 14px;
+  color: #ffffff;
+  text-shadow: 0 0 18px rgba(255, 255, 255, 0.08);
 }
 
 .subtitle {
-  font-size: 1rem;
-  opacity: 0.85;
-  margin-bottom: 30px;
+  max-width: 620px;
+  margin: 0 auto 34px;
+  font-size: 1.05rem;
+  line-height: 1.8;
+  color: #dbe4f0;
+  opacity: 0.92;
 }
 
 .music-box {
-  margin-bottom: 30px;
+  margin-bottom: 28px;
 }
 
 button {
-  padding: 12px 24px;
-  border: none;
-  border-radius: 10px;
-  background: #ffffff;
-  color: #2c2c2c;
-  font-size: 1rem;
+  padding: 13px 26px;
+  font-size: 0.98rem;
+  font-family: inherit;
+  color: #f8fafc;
+  background: rgba(255, 255, 255, 0.07);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 999px;
   cursor: pointer;
-  transition: 0.3s ease;
+  transition: all 0.35s ease;
+  backdrop-filter: blur(6px);
 }
 
 button:hover {
-  transform: scale(1.05);
-  background: #e7e7e7;
+  transform: translateY(-2px);
+  background: rgba(255, 255, 255, 0.14);
+  box-shadow: 0 0 24px rgba(203, 213, 225, 0.12);
 }
 
 .quote-box {
-  margin-top: 20px;
+  margin-top: 10px;
+  padding: 24px 20px;
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.04);
 }
 
 #quoteText {
-  font-size: 1.2rem;
+  min-height: 72px;
+  font-size: 1.3rem;
+  line-height: 1.8;
   font-style: italic;
-  margin-bottom: 20px;
-  min-height: 60px;
+  color: #f1f5f9;
+  margin-bottom: 18px;
+  transition: opacity 0.4s ease;
+}
+
+.footer-note {
+  margin-top: 28px;
+  font-size: 0.9rem;
+  color: #cbd5e1;
+  opacity: 0.72;
+  letter-spacing: 0.08em;
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 768px) {
+  .content-card {
+    padding: 36px 22px;
+  }
+
+  h1 {
+    font-size: 2.4rem;
+  }
+
+  .subtitle {
+    font-size: 0.96rem;
+    line-height: 1.7;
+  }
+
+  #quoteText {
+    font-size: 1.08rem;
+  }
+
+  button {
+    width: 100%;
+    margin-top: 8px;
+  }
 }

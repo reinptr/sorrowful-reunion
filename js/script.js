@@ -16,21 +16,23 @@ let quoteIndex = 0;
 playBtn.addEventListener("click", () => {
   if (song.paused) {
     song.play();
-    playBtn.textContent = "Pause Reff";
+    playBtn.textContent = "Pause Refrain";
   } else {
     song.pause();
-    playBtn.textContent = "Play Reff";
+    playBtn.textContent = "Play Refrain";
   }
 });
 
 nextQuoteBtn.addEventListener("click", () => {
-  quoteIndex++;
-  if (quoteIndex >= quotes.length) {
-    quoteIndex = 0;
-  }
-  quoteText.textContent = quotes[quoteIndex];
+  quoteText.style.opacity = 0;
+
+  setTimeout(() => {
+    quoteIndex = (quoteIndex + 1) % quotes.length;
+    quoteText.textContent = quotes[quoteIndex];
+    quoteText.style.opacity = 1;
+  }, 250);
 });
 
 song.addEventListener("ended", () => {
-  playBtn.textContent = "Play Reff";
+  playBtn.textContent = "Play Refrain";
 });
