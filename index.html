@@ -8,26 +8,30 @@
 </head>
 <body>
   <main class="hero">
-    <div class="overlay"></div>
+    <div class="page-overlay"></div>
 
     <section class="content-card">
-      <p class="mini-text">A song for the feelings that never truly left.</p>
-      <h1>Sorrowful Reunion</h1>
-      <p class="subtitle">
-        Where memories return quietly, and silence speaks louder than words.
-      </p>
+      <div class="card-overlay"></div>
 
-      <div class="music-box">
-        <button id="playBtn">Play Refrain</button>
-        <audio id="song" src="assets/audio/sorrowful-reunion-reff.mp3"></audio>
+      <div class="card-content">
+        <p class="mini-text">A SONG FOR THE FEELINGS THAT NEVER TRULY LEFT.</p>
+        <h1>Sorrowful Reunion</h1>
+        <p class="subtitle">
+          Where memories return quietly, and silence speaks louder than words.
+        </p>
+
+        <div class="music-box">
+          <button id="playBtn">Play Refrain</button>
+          <audio id="song" src="assets/audio/sorrowful-reunion-reff.mp3"></audio>
+        </div>
+
+        <div class="quote-box">
+          <p id="quoteText">"Some reunions are only meant to happen in memories."</p>
+          <button id="nextQuoteBtn">Next Memory</button>
+        </div>
+
+        <p class="footer-note">crafted with memory and silence</p>
       </div>
-
-      <div class="quote-box">
-        <p id="quoteText">"Some reunions are only meant to happen in memories."</p>
-        <button id="nextQuoteBtn">Next Memory</button>
-      </div>
-
-      <p class="footer-note">crafted with memory and silence</p>
     </section>
   </main>
 
